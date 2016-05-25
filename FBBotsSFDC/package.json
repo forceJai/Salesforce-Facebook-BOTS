@@ -1,0 +1,40 @@
+{
+  "name": "sfdcfbbots",
+  "version": "1.0.0",
+  "description": "Facebook BOTS integration with Salesforce",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+	    "body-parser": "~1.15.0",
+	    "express": "~4.13.3",
+	    "nforce": "^1.4.1",
+	    "request": "^2.71.0"
+	  },
+	  "engines": {
+	    "node": "0.12.7"
+	  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/forceJai/Salesforce-Facebook-BOTS.git"
+  },
+  "keywords": [
+    "Salesforce.com",
+    "Facebook",
+    "Facebook",
+    "BOTS",
+    "bots",
+    "Messenger",
+    "Nodejs",
+    "facebook",
+    "bots",
+    "heruko"
+  ],
+  "author": "Jairaj Singh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/forceJai/Salesforce-Facebook-BOTS/issues"
+  },
+  "homepage": "https://github.com/forceJai/Salesforce-Facebook-BOTS#readme"
+}
