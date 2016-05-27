@@ -4,7 +4,7 @@
   "description": "Facebook BOTS integration with Salesforce",
   "main": "index.js",
   "scripts": {
-	    "start": "node heroku/index.js"
+	    "start": "node index.js"
  },
   "dependencies": {
 	    "body-parser": "~1.15.0",
