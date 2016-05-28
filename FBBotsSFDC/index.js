@@ -12,6 +12,7 @@
 var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
+var sf = require('./SF_API');
 
 app.set('port', (process.env.PORT || 5000));
 app.listen(app.get('port'));
@@ -22,6 +23,16 @@ app.get('/', function(req, res) {
   console.log(req);
   res.send('It works!');
 });
+
+app.get('/salesforce', function(req, res) {
+	  if(sf.err)
+		  {
+		  	res.send('Connection Not Happened');
+		  }
+	  else{
+	  res.send('It works! Token' + sf.oauth.access_token);
+	  }
+	});
 
 app.get(['/facebook', '/instagram'], function(req, res) {
   if (
