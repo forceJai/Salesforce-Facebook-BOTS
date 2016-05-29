@@ -13,5 +13,6 @@ exports.webhookGet = function(req,res)
 		    res.send(req.param('hub.challenge'));
 		  } else {
 		    res.sendStatus(400);
+		    
 		  }
 };
