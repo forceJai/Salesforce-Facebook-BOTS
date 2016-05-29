@@ -2,9 +2,9 @@
   "name": "sfdcfbbots",
   "version": "1.0.0",
   "description": "Facebook BOTS integration with Salesforce",
-  "main": "index.js",
+  "main": "bot.js",
   "scripts": {
-	    "start": "node index.js"
+	    "start": "node bot.js"
  },
   "dependencies": {
 	    "body-parser": "~1.15.0",
