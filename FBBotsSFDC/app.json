@@ -1,22 +1,22 @@
 {
-  "name": "fbsalesforcebot",
+  "name": "sfdcfbbots",
   "description": "Facebook BOTS integration with Salesforce",
   "env": {
     "SF_CONSUMER_KEY": {
         "description": "Consumer Key of your Salesforce Connected App",
-        "value":"3MVG9sG9Z3Q1Rlbf.rH3WjK5kIQQ37M7ioDSWxIR7C9epVVEd6HIRyKKfLobJ_DFfX9MLmS3jvW9DUZKPTm4S"
+        "value":'3MVG9sG9Z3Q1Rlbf.rH3WjK5kIQQ37M7ioDSWxIR7C9epVVEd6HIRyKKfLobJ_DFfX9MLmS3jvW9DUZKPTm4S'
     },
     "SF_CONSUMER_SECRET": {
         "description": "Consumer Secret of your Salesforce Connected App",
-        "value":"3567212960861136536"
+        "value":'3567212960861136536'
     },
     "SF_USER": {
         "description": "Salesforce username",
-        "value":"jairaj@gmail.com"
+        "value":'jairaj@gmail.com'
     },
     "SF_PASSWORD": {
         "description": "Salesforce password",
-        "value":"Shinsei123b"
+        "value":'Shinsei123b'
     }
   }
 }
