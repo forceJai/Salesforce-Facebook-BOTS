@@ -35,7 +35,7 @@ app.get('/salesforce', function(req, res) {
 	  }
 	});
 
-/*app.get(['/facebook', '/instagram'], function(req, res) {
+app.get(['/facebook', '/instagram'], function(req, res) {
   if (
     req.param('hub.mode') == 'subscribe' &&
     req.param('hub.verify_token') == 'token'
@@ -44,9 +44,9 @@ app.get('/salesforce', function(req, res) {
   } else {
     res.sendStatus(400);
   }
-});*/
+});
 
-app.get('/facebook', fb.webhookGet);
+//app.get('/facebook', fb.webhookGet);
 
 app.post('/facebook', function(req, res) {
   console.log('Facebook request body:');
