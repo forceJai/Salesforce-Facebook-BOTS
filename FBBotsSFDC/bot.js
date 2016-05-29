@@ -31,7 +31,7 @@ app.get('/salesforce', function(req, res) {
 		  	res.send(sf.username);
 		  }
 	  else{
-	  res.send('It works! Token' + sf.username);
+	  res.send('It works! Token: ' + sf.oauth.access_token);
 	  }
 	});
 
