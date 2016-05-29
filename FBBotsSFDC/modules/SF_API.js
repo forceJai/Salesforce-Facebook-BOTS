@@ -1,10 +1,10 @@
 "use strict";
 
 var nForceAuth = require('nforce'),
-SFclientId = '3MVG9sG9Z3Q1Rlbf.rH3WjK5kIQQ37M7ioDSWxIR7C9epVVEd6HIRyKKfLobJ_DFfX9MLmS3jvW9DUZKPTm4S',
-SFSecret = '3567212960861136536',
-SFusername = 'jairaj@gmail.com',
-SFpassword = 'Shinsei123b'
+SFclientId = process.env.SF_CONSUMER_KEY,
+SFSecret = process.env.SF_CONSUMER_SECRET,
+SFusername = process.env.SF_USER,
+SFpassword = process.env.SF_PASSWORD
 ;
 
 var connection = nForceAuth.createConnection({
