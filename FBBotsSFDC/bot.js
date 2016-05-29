@@ -11,9 +11,9 @@
 
 var bodyParser = require('body-parser');
 var express = require('express');
-var app = express();
 var sf = require('./modules/SF_API');
 var fb = require('./modules/FB_webhook');
+var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 app.listen(app.get('port'));
@@ -35,7 +35,7 @@ app.get('/salesforce', function(req, res) {
 	  }
 	});
 
-app.get(['/facebook', '/instagram'], function(req, res) {
+/*app.get(['/facebook', '/instagram'], function(req, res) {
   if (
     req.param('hub.mode') == 'subscribe' &&
     req.param('hub.verify_token') == 'token'
@@ -44,9 +44,10 @@ app.get(['/facebook', '/instagram'], function(req, res) {
   } else {
     res.sendStatus(400);
   }
-});
+});*/
 
-//app.get('/facebook', fb.webhookGet);
+app.get('/facebook', fb.webhookGet);
+
 
 app.post('/facebook', function(req, res) {
   console.log('Facebook request body:');

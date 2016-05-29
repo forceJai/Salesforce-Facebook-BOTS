@@ -4,7 +4,7 @@
 var request = require('request'),
 sf = require('./SF_API');
 
-var webhookGet = function(req,res)
+exports.webhookGet = function(req,res)
 {
 	if (
 		    req.param('hub.mode') == 'subscribe' &&
@@ -15,4 +15,3 @@ var webhookGet = function(req,res)
 		    res.sendStatus(400);
 		  }
 };
-module.exports = webhookGet;
