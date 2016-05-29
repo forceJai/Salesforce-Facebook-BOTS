@@ -28,10 +28,10 @@ app.get('/', function(req, res) {
 app.get('/salesforce', function(req, res) {
 	  if(sf.err)
 		  {
-		  	res.send('Connection Not Happened');
+		  	res.send(sf.username);
 		  }
 	  else{
-	  res.send('It works! Token' + sf.oauth.access_token);
+	  res.send('It works! Token' + sf.username);
 	  }
 	});
 
