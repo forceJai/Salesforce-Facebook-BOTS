@@ -2,6 +2,10 @@
   "name": "sfdcfbbots",
   "description": "Facebook BOTS integration with Salesforce",
   "env": {
+	  "FB_TOKEN": {
+	        "description": "Consumer Key of your Salesforce Connected App",
+	        "value":''
+	    },
     "SF_CONSUMER_KEY": {
         "description": "Consumer Key of your Salesforce Connected App",
         "value":''

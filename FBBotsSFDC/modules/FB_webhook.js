@@ -44,6 +44,7 @@ exports.webhookPost = function(req,res)
 		var sender = event.sender.id;
 		if(event.message && event.message.text){
 			botResponse({text:'Hello I am BOT'}, sender);
+			console.log('SENDER ID' +sender);
 		}
 	}
 	res.sendStatus(200);
