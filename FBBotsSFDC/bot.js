@@ -37,14 +37,14 @@ app.get('/salesforce', function(req, res) {
 
 
 app.get('/facebook', fb.webhookGet);
+app.post('/facebook', fb.webhookPost);
 
-
-app.post('/facebook', function(req, res) {
+/*app.post('/facebook', function(req, res) {
   console.log('Facebook request body:');
   console.log(req.body);
   // Process the Facebook updates here
   res.sendStatus(200);
-});
+});*/
 
 app.post('/instagram', function(req, res) {
   console.log('Instagram request body:');
