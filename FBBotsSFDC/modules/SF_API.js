@@ -4,8 +4,7 @@ var nForceAuth = require('nforce'),
 SFclientId = process.env.SF_CONSUMER_KEY,
 SFSecret = process.env.SF_CONSUMER_SECRET,
 SFusername = process.env.SF_USER,
-SFpassword = process.env.SF_PASSWORD,
-Promise = require("bluebird")
+SFpassword = process.env.SF_PASSWORD
 ;
 
 var connection = nForceAuth.createConnection({
