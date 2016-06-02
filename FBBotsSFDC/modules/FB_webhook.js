@@ -63,8 +63,8 @@ exports.webhookPost = function(req,res)
 		var event = messaging_events[i];
 		var sender = event.sender.id;
 		if(event.message && event.message.text){
-			//botResponse({text:'Hello I am AWESOME BOT to help you'}, sender);
-			sInterpret({text:event.message.text}, sender);
+			botResponse({text:'Hello I am AWESOME BOT to help you'}, sender);
+			//sInterpret({text:event.message.text}, sender);
 		}
 	}
 	res.sendStatus(200);
