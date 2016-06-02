@@ -34,12 +34,13 @@ exports.IntialIntract = function(sender){
 			resolve(contacts);
 		}
 	};*/
-	var q = "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, FacebookID__c FROM Contact WHERE FacebookId__c = + sender +";
+	var q = "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, FacebookID__c FROM Contact WHERE FacebookId__c = 'ID10153535497712539'";
 	connection.query({query:q}, function(err,resp){
 		if(err){
 			console.log(err);
 		} else if (resp.records && resp.records.length>0){
 			var contacts = resp.records;
+			console.log('CONTACT NAME:' + contacts.get('Id') + '' + contacts.get('Name'));
 			return contacts;
 		}
 	});
