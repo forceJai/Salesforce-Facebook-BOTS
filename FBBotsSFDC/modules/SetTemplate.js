@@ -3,6 +3,7 @@
 exports.formatContact = function(contacts)
 {
 	var elements = [];
+	console.log('contacts.get("Title")');
 	contacts.forEach(function(contact){
 		elements.push({
 			title: contact.get("Name"),
@@ -11,6 +12,7 @@ exports.formatContact = function(contacts)
             	"type":"postback",
             	"title":"View Notes",
             	"payload": "view_notes," + contact.getId() + "," + contact.get("Name")
+            	
             }]
 		});
 	});
