@@ -22,7 +22,7 @@ connection.authenticate({ username: SFusername, password: SFpassword }, function
      }
 });
 
-/*exports.IntialIntract = function(sender){
+exports.IntialIntract = function(sender){
 	/*return  new Promise(resolve,reject){
 		var query = "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, FacebookID__c FROM Contact WHERE FacebookId__c = + sender +";
 		connection.query({query:query});
@@ -33,7 +33,7 @@ connection.authenticate({ username: SFusername, password: SFpassword }, function
 			var contacts = resp.records;
 			resolve(contacts);
 		}
-	};
+	};*/
 	var q = "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, FacebookID__c FROM Contact WHERE FacebookId__c = + sender +";
 	connection.query({query:q}, function(err,resp){
 		if(err){
@@ -43,6 +43,6 @@ connection.authenticate({ username: SFusername, password: SFpassword }, function
 			return contacts;
 		}
 	});
-};*/
+};
 
 module.exports = connection;

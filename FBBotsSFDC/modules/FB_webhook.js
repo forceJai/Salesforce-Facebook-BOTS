@@ -22,18 +22,7 @@ function botResponse(message, recipient)
 	});
 }
 
-var sIntialIntract = function(sender){
-	/*return  new Promise(resolve,reject){
-		var query = "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, FacebookID__c FROM Contact WHERE FacebookId__c = + sender +";
-		connection.query({query:query});
-		if(err){
-			reject("An error occured");
-			console.log(err);
-		} else if (resp.records && resp.records.length>0){
-			var contacts = resp.records;
-			resolve(contacts);
-		}
-	};*/
+/*var sIntialIntract = function(sender){
 	var q = "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, FacebookID__c FROM Contact WHERE FacebookId__c = + sender +";
 	sf.connection.query({query:q}, function(err,resp){
 		if(err){
@@ -43,12 +32,12 @@ var sIntialIntract = function(sender){
 			return contacts;
 		}
 	});
-};
+};*/
 
 function sInterpret(text, sender){
 	var salutation = text.match(/Hello/i); 
 	if(text.match(/Hello/i) || text.match(/hello/i) || text.match(/Hi/i) || text.match(/hi/i)){
-		sIntialIntract(sender).then(function(results){
+		sf.IntialIntract(sender).then(function(results){
 			botResponse(st.formatContact(results),sender);
 		});
 	}
