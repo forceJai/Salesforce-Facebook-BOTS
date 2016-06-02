@@ -1,8 +1,7 @@
-/**
- * http://usejsdoc.org/
- */
+"use strict";
 var request = require('request'),
-sf = require('./SF_API');
+sf = require('./SF_API'),
+st = require('./SetTemplate');
 
 function botResponse(message, recipient)
 {
@@ -21,6 +20,15 @@ function botResponse(message, recipient)
                 console.log('Error: ', response.body.error);
               }
 	});
+}
+
+function sInterpret(text, sender){
+	var salutation = text.match(/Hello/i); 
+	if(text.match(/Hello/i) || text.match(/hello/i) || text.match(/Hi/i) || text.match(/hi/i)){
+		sf.IntialIntract(sender).then(function(results){
+			botResponse(st.formatContact(results),sender);
+		});
+	}
 }
 
 exports.webhookGet = function(req,res)
@@ -43,9 +51,11 @@ exports.webhookPost = function(req,res)
 		var event = messaging_events[i];
 		var sender = event.sender.id;
 		if(event.message && event.message.text){
-			botResponse({text:'Hello I am BOT'}, sender);
-			console.log('SENDER ID' +sender);
+			botResponse({text:'Hello I am AWESOME BOT to help you'}, sender);
+			sInterpret({text:event.message.text}, sender);
 		}
 	}
 	res.sendStatus(200);
 };
+
+
