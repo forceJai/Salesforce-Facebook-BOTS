@@ -23,25 +23,14 @@ connection.authenticate({ username: SFusername, password: SFpassword }, function
 });
 
 exports.IntialIntract = function(sender){
-	/*return  new Promise(resolve,reject){
-		var query = "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, FacebookID__c FROM Contact WHERE FacebookId__c = + sender +";
-		connection.query({query:query});
-		if(err){
-			reject("An error occured");
-			console.log(err);
-		} else if (resp.records && resp.records.length>0){
-			var contacts = resp.records;
-			resolve(contacts);
-		}
-	};*/
-	var q = "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, FacebookID__c FROM Contact WHERE FacebookId__c = 'ID10153535497712539'";
+		var q = "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, FacebookID__c FROM Contact WHERE FacebookId__c = 'ID10153535497712539'";
 	connection.query({query:q}, function(err,resp){
 		if(err){
 			console.log(err);
 		} else if (resp.records && resp.records.length>0){
-			var contacts = resp.records;
-			console.log('CONTACT NAME:' + contacts.get('Id') + '' + contacts.get('Name'));
-			return contacts;
+		resp.records.forEach(function(rec){
+			console.log('CONTACT NAME:' + rec.get('Id') + '' + rec.get('Name'));
+		});
 		}
 	});
 };
