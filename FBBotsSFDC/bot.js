@@ -36,7 +36,7 @@ app.get('/salesforce', function(req, res) {
 	});
 
 
-app.get('/salesforce/ID', sf.IntialIntract);
+//app.get('/salesforce/ID', sf.IntialIntract);
 app.get('/facebook', fb.webhookGet);
 app.post('/facebook', fb.webhookPost);
 
