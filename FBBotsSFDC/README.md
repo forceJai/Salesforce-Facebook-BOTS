@@ -1,13 +1,15 @@
-# Salesforce-Facebook-BOTS
+# Salesforce-Facebook-BOTS integration 
 This is sample Salesforce integration with Facebook BOT using Messenger/Graph API. 
 Key operation it perform:
+
 1. If existing customer interact with this BOT: 
    - BOT will create an activity
    - Present existing pending order list as response to cancel/change and a button to check for product
+
 2. If new customer interact with BOT
   - Create Lead and button to check product
 
-##
+##tech
 NodeJS, Heroku, Facebook Messenger API & Graph API
 
 ## Steps to Configure 
