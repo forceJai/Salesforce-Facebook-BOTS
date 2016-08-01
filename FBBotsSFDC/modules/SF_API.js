@@ -27,10 +27,11 @@ exports.IntialIntract = function(){
 	connection.query({query:q}, function(err,resp){
 		if(err){
 			console.log(err);
-		} else if (resp.records && resp.records.length>0){
-		resp.records.forEach(function(rec){
-			console.log('CONTACT NAME:' + rec.get('Id') + '' + rec.get('Name'));
-		});
+		} else if (resp.records && resp.records.length>0){resp.records[0].toJSON();
+		//resp.records.forEach(function(rec){
+			
+			//console.log('CONTACT NAME:' + rec.get('Id') + '' + rec.get('Name'));
+		//});
 		}
 	});
 };
