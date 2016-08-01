@@ -38,9 +38,14 @@ app.get('/salesforce', function(req, res) {
 
 app.get('/salesforce/ID', function(req, res)
 		{
-		sf.IntialIntract();
+	try{sf.IntialIntract();}
+	catch(err)
+	{
+		console.log(err);
+	}
+	
 		if(sf.err){
-			res.send(rec.get('Id'));
+			res.send(res.get('Id'));
 		}
 });
 app.get('/facebook', fb.webhookGet);
