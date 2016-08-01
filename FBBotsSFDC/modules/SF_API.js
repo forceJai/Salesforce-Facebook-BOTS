@@ -22,7 +22,7 @@ connection.authenticate({ username: SFusername, password: SFpassword }, function
      }
 });
 
-exports.IntialIntract = function(sender){
+exports.IntialIntract = function(){
 		var q = "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, FacebookID__c FROM Contact WHERE FacebookId__c = 'ID10153535497712539'";
 	connection.query({query:q}, function(err,resp){
 		if(err){
