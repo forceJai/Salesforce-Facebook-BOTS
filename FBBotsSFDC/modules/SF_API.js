@@ -25,12 +25,12 @@ connection.authenticate({ username: SFusername, password: SFpassword }, function
 exports.IntialIntract = function(){
 		console.log("REACHED INITIALINTRACT FUNCTION");
 		var q = "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, FacebookID__c FROM Contact WHERE FacebookId__c = 'ID10153535497712539'";
-	connection.query({query:q}, function(err,resp){
+	connection.query({query:q}, function(err,res){
 		if(err){
 			console.log(err);
-		} else if (resp.records && resp.records.length>0){
+		} else if (res.records && res.records.length>0){
 			console.log("REACHED QUERY RESULT AVAILABLE");
-			resp.records[0].toJSON();
+			res.records[0].toJSON();
 		//resp.records.forEach(function(rec){
 			
 			//console.log('CONTACT NAME:' + rec.get('Id') + '' + rec.get('Name'));
