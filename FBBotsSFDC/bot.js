@@ -19,6 +19,7 @@ app.set('port', (process.env.PORT || 5000));
 app.listen(app.get('port'));
 
 app.use(bodyParser.json());
+//app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
   console.log(req);
