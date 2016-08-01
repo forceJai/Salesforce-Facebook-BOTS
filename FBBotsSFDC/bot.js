@@ -38,7 +38,7 @@ app.get('/salesforce', function(req, res) {
 
 app.get('/salesforce/ID', function(req, res)
 		{
-	try{sf.IntialIntract(err, res);}
+	try{sf.IntialIntract(req, res);}
 	catch(err)
 	{
 		console.log(err);
