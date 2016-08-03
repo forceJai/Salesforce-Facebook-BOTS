@@ -1,9 +1,10 @@
 "use strict";
 var request = require('request'),
+Promise = require('promise'),
 sf = require('./SF_API'),
 st = require('./SetTemplate');
 
-
+exports.sf = sf;
 function botResponse(message, recipient)
 {
 	request({
@@ -23,22 +24,13 @@ function botResponse(message, recipient)
 	});
 }
 
-/*var sIntialIntract = function(sender){
-	var q = "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, FacebookID__c FROM Contact WHERE FacebookId__c = + sender +";
-	sf.connection.query({query:q}, function(err,resp){
-		if(err){
-			console.log(err);
-		} else if (resp.records && resp.records.length>0){
-			var contacts = resp.records;
-			return contacts;
-		}
-	});
-};*/
+
 
 function sInterpret(text, sender){
 	var salutation = text.match(/Hello/i); 
 	if(text.match(/Hello/i) || text.match(/hello/i) || text.match(/Hi/i) || text.match(/hi/i)){
-		sf.IntialIntract(sender).then(function(results){
+		sf.IntialIntract().then(function(results)
+		{
 			botResponse(st.formatContact(results),sender);
 		});
 	}
@@ -65,8 +57,8 @@ exports.webhookPost = function(req,res)
 		var sender = event.sender.id;
 		if(event.message && event.message.text){
 			console.log("FACEBOOK ID IS:" +sender);
-			botResponse({text:'Hello I am AWESOME BOT to help you'}, sender);
-			//sInterpret({text:event.message.text}, sender);
+			//botResponse({text:'Hello I am AWESOME BOT to help you'}, sender);
+			sInterpret({text:event.message.text}, sender);
 		}
 	}
 	res.sendStatus(200);

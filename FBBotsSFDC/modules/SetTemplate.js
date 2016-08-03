@@ -1,6 +1,6 @@
 "use strict";
 
-exports.formatContact = function(contacts)
+var formatContact = function(contacts)
 {
 	var elements = [];
 	console.log('contacts.get("Title")');
@@ -26,3 +26,4 @@ exports.formatContact = function(contacts)
 		}
 	};
 };
+exports.formatContact = formatContact; 

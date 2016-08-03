@@ -1,6 +1,7 @@
 "use strict";
-
+var request = require('request');
 var nForceAuth = require('nforce'),
+Promise = require('promise'),
 SFclientId = process.env.SF_CONSUMER_KEY,
 SFSecret = process.env.SF_CONSUMER_SECRET,
 SFusername = process.env.SF_USER,
@@ -22,21 +23,26 @@ connection.authenticate({ username: SFusername, password: SFpassword }, function
      }
 });
 
-exports.IntialIntract = function(err, res){
-		console.log("REACHED INITIALINTRACT FUNCTION");
-		var q = "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, FacebookID__c FROM Contact WHERE FacebookId__c = 'ID10153535497712539'";
-	connection.query({query:q,oauth: req.session.oauth}, function(err,res){
-		if(err){
-			console.log(err);
-		} else if (res.records && res.records.length>0){
-			console.log("REACHED QUERY RESULT AVAILABLE");
-			res.records[0].toJSON();
-		//resp.records.forEach(function(rec){
-			
-			//console.log('CONTACT NAME:' + rec.get('Id') + '' + rec.get('Name'));
-		//});
-		}
-	});
+ var IntialIntract = function(Id)
+{
+	
+	 return new Promise(function(resolve, reject){
+			connection.query({query: "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, FacebookID__c FROM Contact WHERE FacebookId__c = '"+ Id +"' LIMIT 1" }, function(err, res) 
+					{
+			    if(err)
+			    { console.error(err);
+			    	reject("AnError Occured");}
+			    	    else { 
+			    	    	var contact = res.records[0].toJSON();
+			    	    	console.log("QUERY RESULT");
+			    	    	console.log(contact);
+			   resolve(res.records);
+			   }
+			   });
+			});
 };
 
-module.exports = connection;
+
+exports.IntialIntract = IntialIntract;
+exports.connection = connection;
+

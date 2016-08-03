@@ -37,15 +37,21 @@ app.get('/salesforce', function(req, res) {
 	});
 
 
-app.get('/salesforce/ID', function(req, res)
+/*app.get('/ID', function(req, res)
 		{
-		sf.IntialIntract(req, res);
-	
+		
+		var record = sf.IntialIntract();
 	
 		if(sf.err){
 			res.send(res.get('Id'));
 		}
-});
+		else{
+			  res.send('It works, Contact Name is: ' +record.Name);
+			  }
+});*/
+
+//app.get('/salesforce/ID', sf.IntialIntract);
+
 app.get('/facebook', fb.webhookGet);
 app.post('/facebook', fb.webhookPost);
 
