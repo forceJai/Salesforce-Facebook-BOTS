@@ -25,8 +25,8 @@ var formatContact = function(contacts)
 			}
 		}
 	};*/
-	var Name = contacts.get("Name");
-	var MobilePhone = contacts.get("MobilePhone");
+	var Name = contacts[0].get("Name");
+	var MobilePhone = contacts[0].get("MobilePhone");
 	var responsetext = "Hello '"+ Name +"', Your Phone Number in our database is'"+ MobilePhone +"' , Thanks for reaching us";
 	return responsetext;
 };
