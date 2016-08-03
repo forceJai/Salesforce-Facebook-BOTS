@@ -27,13 +27,13 @@ function botResponse(message, recipient)
 
 
 function sInterpret(text, sender){
-	var salutation = text.match(/Hello/i); 
-	if(text.match(/Hello/i) || text.match(/hello/i) || text.match(/Hi/i) || text.match(/hi/i)){
+	//var salutation = text.match(/Hello/i); 
+	//if(text.match(/Hello/i) || text.match(/hello/i) || text.match(/Hi/i) || text.match(/hi/i)){
 		sf.IntialIntract().then(function(results)
 		{
 			botResponse(st.formatContact(results),sender);
 		});
-	}
+	//}
 }
 
 exports.webhookGet = function(req,res)
