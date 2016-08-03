@@ -25,9 +25,11 @@ var formatContact = function(contacts)
 			}
 		}
 	};*/
+	console.log("REACHED ST");
 	var Name = contacts[0].get("Name");
 	var MobilePhone = contacts[0].get("MobilePhone");
 	var responsetext = "Hello '"+ Name +"', Your Phone Number in our database is'"+ MobilePhone +"' , Thanks for reaching us";
+	console.log(responsetext);
 	return responsetext;
 };
 exports.formatContact = formatContact; 

@@ -33,6 +33,7 @@ connection.authenticate({ username: SFusername, password: SFpassword }, function
 			    { console.error(err);
 			    	reject("AnError Occured");}
 			    	    else { 
+			    	    	console.log("QUERY SUCCESS");
 			   resolve(res.records);
 			   }
 			   });
