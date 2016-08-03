@@ -2,8 +2,8 @@
 
 var formatContact = function(contacts)
 {
-	var elements = [];
-	console.log('contacts.get("Title")');
+	/*var elements = [];
+	console.log(contacts.get("Title"));
 	contacts.forEach(function(contact){
 		elements.push({
 			title: contact.get("Name"),
@@ -24,6 +24,10 @@ var formatContact = function(contacts)
 				"elements": elements
 			}
 		}
-	};
+	};*/
+	var Name = contacts.get("Name");
+	var MobilePhone = contacts.get("MobilePhone");
+	var responsetext = "Hello '"+ Name +"', Your Phone Number in our database is'"+ MobilePhone +"' , Thanks for reaching us";
+	return responsetext;
 };
 exports.formatContact = formatContact; 
