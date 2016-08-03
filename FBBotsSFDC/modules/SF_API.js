@@ -33,9 +33,9 @@ connection.authenticate({ username: SFusername, password: SFpassword }, function
 			    { console.error(err);
 			    	reject("AnError Occured");}
 			    	    else { 
-			    	    	var contact = res.records[0].toJSON();
+			    	    	/*var contact = res.records[0].toJSON();
 			    	    	console.log("QUERY RESULT");
-			    	    	console.log(contact);
+			    	    	console.log(contact);*/
 			   resolve(res.records);
 			   }
 			   });
