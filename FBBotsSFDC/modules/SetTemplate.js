@@ -33,7 +33,7 @@ var formatContact = function(contacts)
 	var MobilePhone = contacts[0].get("MobilePhone");
 	responsetext = "Hello '"+ Name +"', Your Phone Number in our database is'"+ MobilePhone +"' , Thanks for reaching us";
 	console.log(responsetext);
-		};
+		}
 	return responsetext;
 };
 exports.formatContact = formatContact; 
