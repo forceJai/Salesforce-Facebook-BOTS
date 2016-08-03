@@ -1,7 +1,7 @@
 "use strict";
-var request = require('request'),
-SF = require('./SF_API'),
-ST = require('./SetTemplate');
+var request = require('request');
+var SF = require('./SF_API');
+var ST = require('./SetTemplate');
 
 exports.sf = SF;
 function botResponse(message, recipient)

@@ -1,5 +1,5 @@
 "use strict";
-
+var bodyParser = require('body-parser');
 var formatContact = function(contacts)
 {
 	/*var elements = [];

@@ -1,6 +1,5 @@
 "use strict";
 var bodyParser = require('body-parser');
-var request = require('request');
 var nForceAuth = require('nforce'),
 Promise = require('promise'),
 SFclientId = process.env.SF_CONSUMER_KEY,
