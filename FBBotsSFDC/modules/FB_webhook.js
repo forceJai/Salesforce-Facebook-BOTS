@@ -1,10 +1,10 @@
 "use strict";
 var request = require('request'),
 Promise = require('promise'),
-sf = require('./SF_API'),
-st = require('./SetTemplate');
+SF = require('./SF_API'),
+ST = require('./SetTemplate');
 
-exports.sf = sf;
+exports.sf = SF;
 function botResponse(message, recipient)
 {
 	console.log(message);
@@ -30,9 +30,10 @@ function botResponse(message, recipient)
 function sInterpret(text, sender){
 	//var salutation = text.match(/Hello/i); 
 	//if(text.match(/Hello/i) || text.match(/hello/i) || text.match(/Hi/i) || text.match(/hi/i)){
-		sf.IntialIntract().then(function(results)
+	SF.IntialIntract().then(function(results)
 		{
-			botResponse(st.formatContact(results),sender);
+		console.log("BEFORE ST CALL");	
+		botResponse(ST.formatContact(results),sender);
 		});
 	//}
 }
