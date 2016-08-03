@@ -11,6 +11,10 @@
 
 var bodyParser = require('body-parser');
 var express = require('express');
+var session      = require('express-session');
+var cookieParser = require('cookie-parser');
+var nForceAuth = require('nforce');
+var request = require('request');
 var sf = require('./modules/SF_API');
 var fb = require('./modules/FB_webhook');
 var app = express();

@@ -1,6 +1,5 @@
 "use strict";
 var request = require('request'),
-Promise = require('promise'),
 SF = require('./SF_API'),
 ST = require('./SetTemplate');
 

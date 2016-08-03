@@ -27,13 +27,12 @@ var formatContact = function(contacts)
 	};*/
 	console.log("REACHED ST");
 	var responsetext = "Hello";
-	if(contacts)
-		{
-	var Name = contacts[0].get("Name");
-	var MobilePhone = contacts[0].get("MobilePhone");
-	responsetext = "Hello '"+ Name +"', Your Phone Number in our database is'"+ MobilePhone +"' , Thanks for reaching us";
+	console.log(contacts[0]);
+	var sName = contacts[0].get("Name");
+	var sMobilePhone = contacts[0].get("MobilePhone");
+	responsetext = "Hello '"+ sName +"', Your Phone Number in our database is'"+ sMobilePhone +"' , Thanks for reaching us";
 	console.log(responsetext);
-		}
+
 	return responsetext;
 };
 exports.formatContact = formatContact; 
