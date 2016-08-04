@@ -26,7 +26,7 @@ connection.authenticate({ username: SFusername, password: SFpassword }, function
  var IntialIntract = function(Id)
 {
 	return new Promise(function(resolve, reject){
-	connection.query({query: "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, FacebookID__c FROM Contact WHERE FacebookId__c = '"+ Id +"' LIMIT 1" }, function(err, res) 
+	connection.query({query: "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, FacebookID__c FROM Contact LIMIT 1" }, function(err, res) 
 			{
 	    if(err)
 	    { console.error(err);
