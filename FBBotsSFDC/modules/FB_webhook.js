@@ -32,7 +32,8 @@ function sInterpret(text, sender){
 	SF.IntialIntract().then(function(results)
 		{
 		console.log("BEFORE ST CALL");	
-		botResponse(ST.formatContact(results),sender);
+		var cMessage = ST.formatContact(results); 
+		botResponse({text:cMessage},sender);
 		});
 	//}
 }
@@ -58,8 +59,8 @@ exports.webhookPost = function(req,res)
 		var sender = event.sender.id;
 		if(event.message && event.message.text){
 			console.log("FACEBOOK ID IS:" +sender);
-			botResponse({text:'Hello I am AWESOME BOT to help you'}, sender);
-			//sInterpret({text:event.message.text}, sender);
+			//botResponse({text:'Hello I am AWESOME BOT to help you'}, sender);
+			sInterpret({text:event.message.text}, sender);
 		}
 	}
 	res.sendStatus(200);
