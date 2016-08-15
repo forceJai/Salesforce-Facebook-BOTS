@@ -25,11 +25,11 @@ NodeJS, Heroku, Facebook Messenger API & Graph API
 
 ###Heroku Configuration
 Add following config variables <br>
-        1. FB_TOKEN - Facebook Page Token from settings
-        2. SF_CONSUMER_KEY - Salesforce Consumer Key of Connected App
-        3. SF_CONSUMER_SECRET - Consumer Secret of your Salesforce Connected App
-        4. SF_USER - Salesforce username
-        5. SF_PASSWORD - Salesforce password
+        1. FB_TOKEN - Facebook Page Token from settings <br>
+        2. SF_CONSUMER_KEY - Salesforce Consumer Key of Connected App <br>
+        3. SF_CONSUMER_SECRET - Consumer Secret of your Salesforce Connected App <br>
+        4. SF_USER - Salesforce username <br>
+        5. SF_PASSWORD - Salesforce password <br>
 
 ###Facebook
 Components of integration:
