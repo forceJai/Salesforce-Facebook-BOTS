@@ -1,4 +1,7 @@
 # Salesforce-Facebook-BOTS integration 
+
+## Get detailed documentation in repository's [wiki](https://github.com/forceJai/Salesforce-Facebook-BOTS/wiki/BOT-ified-Salesforce-Facebook-BOT-integration)
+
 This is sample Salesforce integration with Facebook BOT using Messenger/Graph API. 
 Key operation it perform:
 
@@ -9,7 +12,7 @@ Key operation it perform:
 2. If new customer interact with BOT
   - Create Lead and button to check product
 
-##tech
+##Tech
 NodeJS, Heroku, Facebook Messenger API & Graph API
 
 ## Steps to Configure 
@@ -21,12 +24,12 @@ NodeJS, Heroku, Facebook Messenger API & Graph API
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ###Heroku Configuration
-Add following config variables 
-1. FB_TOKEN - Facebook Page Token from settings
-2. SF_CONSUMER_KEY - Salesforce Consumer Key of Connected App
-3. SF_CONSUMER_SECRET - Consumer Secret of your Salesforce Connected App
-4. SF_USER - Salesforce username
-5. SF_PASSWORD - Salesforce password
+Add following config variables <br>
+        1. FB_TOKEN - Facebook Page Token from settings
+        2. SF_CONSUMER_KEY - Salesforce Consumer Key of Connected App
+        3. SF_CONSUMER_SECRET - Consumer Secret of your Salesforce Connected App
+        4. SF_USER - Salesforce username
+        5. SF_PASSWORD - Salesforce password
 
 ###Facebook
 Components of integration:
