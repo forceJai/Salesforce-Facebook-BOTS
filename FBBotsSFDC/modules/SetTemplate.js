@@ -30,7 +30,7 @@ var formatContact = function(contacts)
 	console.log(contacts[0]);
 	var sName = contacts[0].get("Name");
 	var sMobilePhone = contacts[0].get("MobilePhone");
-	responsetext = "Hello '"+ sName +"', Your Phone Number in our database is'"+ sMobilePhone +"' , Thanks for reaching us";
+	responsetext = "Hello '"+ sName +"', Your Phone Number in our database is'"+ sMobilePhone +"' , Thanks for reaching us,\r\n You can ask top 3 opprotunity";
 	console.log(responsetext);
 
 	return responsetext;
