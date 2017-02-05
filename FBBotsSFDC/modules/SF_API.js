@@ -2,12 +2,13 @@
 var bodyParser = require('body-parser');
 var nForceAuth = require('nforce'),
 Promise = require('promise'),
-SFclientId = process.env.SF_CONSUMER_KEY,
-SFSecret = process.env.SF_CONSUMER_SECRET,
-SFusername = process.env.SF_USER,
-SFpassword = process.env.SF_PASSWORD
+SFclientId ='3MVG9sG9Z3Q1Rlbf.rH3WjK5kIQQ37M7ioDSWxIR7C9epVVEd6HIRyKKfLobJ_DFfX9MLmS3jvW9DUZKPTm4S',
+SFSecret ='3567212960861136536',
+SFusername ='jairaj@gmail.com',
+SFpassword ='Shinsei1'
 ;
 
+var AccessToken = '';
 var connection = nForceAuth.createConnection({
 	clientId: SFclientId,
 	clientSecret: SFSecret,
@@ -20,13 +21,15 @@ connection.authenticate({ username: SFusername, password: SFpassword }, function
          console.log("Authentication error - " + err);
      } else {
          console.log('Authentication successful. Cached Token: ' + connection.oauth.access_token);
+         AccessToken = resp.access_token;
+         console.log('Authentication Access: ' + AccessToken);
      }
 });
 
  var IntialIntract = function(Id)
 {
 	return new Promise(function(resolve, reject){
-	connection.query({query: "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, FacebookID__c FROM Contact LIMIT 1" }, function(err, res) 
+	connection.query({query: "SELECT Name, Amount, ContactId__r.Name, ContactId__r.MobilePhone FROM Opportunity where ContactId__r.Id ='0031a000007h6H9AAI'" }, function(err, res) 
 			{
 	    if(err)
 	    { console.error(err);
@@ -45,4 +48,5 @@ connection.authenticate({ username: SFusername, password: SFpassword }, function
 
 exports.IntialIntract = IntialIntract;
 exports.connection = connection;
+exports.AccessToken = AccessToken;
 

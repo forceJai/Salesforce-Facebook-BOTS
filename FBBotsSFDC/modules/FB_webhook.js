@@ -28,14 +28,14 @@ function botResponse(message, recipient)
 
 function sInterpret(text, sender){
 	//var salutation = text.match(/Hello/i); 
-	if(text.match(/Hello/i) || text.match(/hello/i) || text.match(/Hi/i) || text.match(/hi/i)){
+	//if(text.match(/Hello/i) || text.match(/hello/i) || text.match(/Hi/i) || text.match(/hi/i)){
 	SF.IntialIntract().then(function(results)
 		{
 		console.log("BEFORE ST CALL");	
 		var cMessage = ST.formatContact(results); 
 		botResponse({text:cMessage},sender);
 		});
-	}
+	//}
 }
 
 exports.webhookGet = function(req,res)
