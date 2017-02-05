@@ -9,7 +9,7 @@ function botResponse(message, recipient)
 	console.log(message);
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
-		qs: {access_token: process.env.FB_TOKEN},
+		qs: {access_token:process.env.FB_TOKEN},
         method: 'POST',
         json: {
             recipient: {id: recipient},
@@ -28,20 +28,21 @@ function botResponse(message, recipient)
 
 function sInterpret(text, sender){
 	//var salutation = text.match(/Hello/i); 
-	//if(text.match(/Hello/i) || text.match(/hello/i) || text.match(/Hi/i) || text.match(/hi/i)){
+	if(text.match(/Hello/i) || text.match(/hello/i) || text.match(/Hi/i) || text.match(/hi/i)){
 	SF.IntialIntract().then(function(results)
 		{
 		console.log("BEFORE ST CALL");	
 		var cMessage = ST.formatContact(results); 
 		botResponse({text:cMessage},sender);
 		});
-	//}
+	}
 }
 
 exports.webhookGet = function(req,res)
 {
 	if (
-		    req.param('hub.mode') == 'subscribe' &&
+		    req.param
+		    ('hub.mode') == 'subscribe' &&
 		    req.param('hub.verify_token') == 'token'
 		  ) {
 		    res.send(req.param('hub.challenge'));
