@@ -28,8 +28,10 @@ var formatContact = function(contacts)
 	console.log("REACHED ST");
 	var responsetext = "Hello";
 	console.log(contacts[0]);
-	var sName = contacts[0].contactid__r.get("Name");
-	var sMobilePhone = contacts[0].get("ContactId__r.MobilePhone");
+	var sName = contacts[0].contactid__r.get("ContactId__r").Name;
+	//console.log("NAME");
+	//console.log(sName);
+	var sMobilePhone = contacts[0].get("ContactId__r").MobilePhone;
 	var OpptyName = contacts[0].get("Name");
 	var OpptyAmount = contacts[0].get("Amount");
 	
