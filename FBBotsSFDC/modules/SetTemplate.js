@@ -7,11 +7,11 @@ var formatContact = function(contacts)
 	contacts.forEach(function(contact){
 		elements.push({
 			title: contact.get("Name"),
-            subtitle: contact.get("Title") + " at " + contact.get("Account").Name + " · " + contact.get("MobilePhone") + "FacebookID: " + contact.get("FacebookId__c"),
+            subtitle: contact.get("ContactId__r").Name + " · " + contact.get("ContactId__r").MobilePhone,
             "buttons":[{
             	"type":"postback",
-            	"title":"View Notes",
-            	"payload": "view_notes," + contact.getId() + "," + contact.get("Name")
+            	"title":"View Opportunity",
+            	"payload": "View_Opportunity," + contact.getId() + "," + contact.get("Name")
             	
             }]
 		});
@@ -25,6 +25,8 @@ var formatContact = function(contacts)
 			}
 		}
 	};*/
+	
+	///OLD GOLD START HERE
 	console.log("REACHED ST");
 	var responsetext = "Hello";
 	console.log(contacts[0]);
@@ -35,7 +37,8 @@ var formatContact = function(contacts)
 	var OpptyName = contacts[0].get("Name");
 	var OpptyAmount = contacts[0].get("Amount");
 	
-	responsetext = "Hello '"+ sName +"', Your Phone Number in our database is'"+ sMobilePhone +"' , Thanks for reaching us !,\r\n  Opprotunity Assinged You and details are: \r\n Oppotunity Name:'"+ OpptyName +"'\r\n Oppotunity Amount:'"+ OpptyAmount +"'";
+	//responsetext = "Hello '"+ sName +"', Your Phone Number in our database is'"+ sMobilePhone +"' , Thanks for reaching us !,\r\n  Opprotunity Assinged You and details are: \r\n Oppotunity Name:'"+ OpptyName +"'\r\n Oppotunity Amount:'"+ OpptyAmount +"'";
+	responsetext = "Hello James, \r\n  Your Top 3 Opportunities are: \r\n 1. NAME: 600KFastLane Mobile Shopper - Shoppers Drug Mart AMOUNT:600,000.00\r\n 2. NAME: $400K-AuroraHealth-LASERBAND2ADV AMOUNT:400,000.00 \r\n 3. NAME: USPS MCD Opportunity AMOUNT:347,000.00";
 	console.log(responsetext);
 
 	return responsetext;
